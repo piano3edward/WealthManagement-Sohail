@@ -1,4 +1,4 @@
-public with sharing class TradeTransactionHelper2
+public with sharing class WealthManagementHelper
 {
 /*
    1) Update Sold Quantity of buy records while selling
@@ -168,18 +168,28 @@ Public Static Boolean PerformSellCalculations(List<Trade_Transaction__c> SellTra
 	}
 }
 
-public Static Void CalculateTaxes(List<Trade_Transaction_Lot_Book__c> TradeTransactionLotBooks)
+/*
+    Prevents duplicate insert of existing tax slab record
+*/
+Public Static Void CheckDuplicateTaxSlabs(List<Tax_Slab__c> TaxSlabs)
+{
+    
+}
+
+/*
+   1) Calculate taxes for incoming Trade_Transaction_Lot_Book__c entries
+   2) Update Tax_Type__c & Tax_Amount__c fields of incoming Trade_Transaction_Lot_Book__c entries
+ */
+public Static List<Trade_Transaction_Lot_Book__c> CalculateTaxes(List<Trade_Transaction_Lot_Book__c> TradeTransactionLotBooks)
 {
 	if(TradeTransactionLotBooks!=null)
 	{
 		Map<String,Tax_Slab__c> TaxSlabMap;
 		List<Tax_Slab__c> TaxSlabs;
 		//Get tax slabs and build a map of slabs
-		TaxSlabs = [Select Tax_Type__c, Gain_Threshold_Amount__c, Percentage__c From Tax_Slab__c Where Tax_Type  = 'Short Term Capital Gain' or Tax_Type = 'Long Term Capital Gain'];
-
+		TaxSlabs = [Select Tax_Type__c, Gain_Threshold_Amount__c, Percentage__c From Tax_Slab__c Where Tax_Type__c  = 'Short Term Capital Gain' or Tax_Type__c = 'Long Term Capital Gain'];
 
 	}
+	return TradeTransactionLotBooks;
 }
-
-
 }

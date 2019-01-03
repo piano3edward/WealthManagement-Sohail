@@ -49,13 +49,15 @@ trigger trgTradeTransaction on Trade_Transaction__c (before insert,before update
 			if(Tran.Transaction_Type__C == 'Sell') //its a Sell transaction
 			{
 				tmpSellTransaction = Tran.clone(true,true);
-				System.debug(tmpselltransaction);
+				//System.debug('Sell Created Date: ' + tmpselltransaction.CreatedDate);
+				//System.debug('Sell Modified Date: ' + tmpselltransaction.LastModifiedDate);
 				tmpSellTransactions.add(tmpSellTransaction);
 			}
 		}
 		if(tmpSellTransactions.size()>0)
 		{
-			TradeTransactionHelper2.PerformSellCalculations(tmpSellTransactions);
+			//TradeTransactionHelper2.PerformSellCalculations(tmpSellTransactions);
+			WealthManagementHelper.PerformSellCalculations(tmpSellTransactions);
 		}
 	}
 }
