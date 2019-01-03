@@ -1,0 +1,17 @@
+<apex:page  controller="AccountLedgerBookEntries" docType="html-5.0" lightningStylesheets="true">
+    <apex:pageMessages />
+    <apex:form >  
+        <apex:pageBlock title="Ledger Book Entries" >
+        From Date: <apex:input type="date" value="{!fromDate}"/>
+        End Date: <apex:input type="date" value="{!toDate}"/> <br/><br/>
+         <apex:commandButton value="Show Ledger Entries" action="{!customerDetails}" rerender="LedgerBookTable"/>
+                            
+            <apex:pageBlockTable value="{!accLedger}" var="a" id="LedgerBookTable">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Amount__c}"/>
+            </apex:pageBlockTable>           
+            <apex:pageBlockButtons location="top">           
+        </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

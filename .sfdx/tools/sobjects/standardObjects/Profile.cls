@@ -70,6 +70,7 @@ global class Profile {
     global Boolean PermissionsDataExport;
     global Boolean PermissionsDelegatedTwoFactor;
     global Boolean PermissionsDeleteActivatedContract;
+    global Boolean PermissionsDeleteEventMonitoringData;
     global Boolean PermissionsDeleteTopics;
     global Boolean PermissionsDistributeFromPersWksp;
     global Boolean PermissionsEditActivatedOrders;

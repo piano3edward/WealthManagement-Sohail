@@ -73,6 +73,7 @@ global class PermissionSetLicense {
     global Boolean MaximumPermissionsDataExport;
     global Boolean MaximumPermissionsDelegatedTwoFactor;
     global Boolean MaximumPermissionsDeleteActivatedContract;
+    global Boolean MaximumPermissionsDeleteEventMonitoringData;
     global Boolean MaximumPermissionsDeleteTopics;
     global Boolean MaximumPermissionsDistributeFromPersWksp;
     global Boolean MaximumPermissionsEditActivatedOrders;

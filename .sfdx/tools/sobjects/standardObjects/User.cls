@@ -11,7 +11,7 @@ global class User {
     global List<AcceptedEventRelation> AcceptedEventRelations;
     global Account Account;
     global Id AccountId;
-    global List<Order> ActivatedBy;
+    global List<Contract> ActivatedBy;
     global List<ProcessInstanceWorkitem> Actor;
     global Address Address;
     global String Alias;
@@ -35,7 +35,7 @@ global class User {
     global List<ContentVersion> ContentModifiedBy;
     global List<Contract> ContractsSigned;
     global String Country;
-    global List<npsp__Engagement_Plan_Task__c> CreatedBy;
+    global List<ContentDocumentHistory> CreatedBy;
     global Id CreatedById;
     global Datetime CreatedDate;
     global List<EntityDefinition> DataSteward;
@@ -57,7 +57,7 @@ global class User {
     global String EmployeeNumber;
     global List<ContentNotification> EntityIdentifier;
     global List<EventRelation> EventRelations;
-    global List<AuthProvider> ExecutionUser;
+    global List<SamlSsoConfig> ExecutionUser;
     global String Extension;
     global List<ExternalDataUserAuth> ExternalDataUserAuths;
     global String Fax;
@@ -67,7 +67,7 @@ global class User {
     global List<UserFeed> Feeds;
     global String FirstName;
     global List<ContentVersion> FirstPublishLocation;
-    global List<EmailTemplate> Folder;
+    global List<Document> Folder;
     global Boolean ForecastEnabled;
     global List<UserRole> ForecastUser;
     global String FullPhotoUrl;
@@ -77,7 +77,7 @@ global class User {
     global List<Site> GuestUser;
     global List<SocialPost> HiddenBy;
     global Id Id;
-    global List<TaskFeed> InsertedBy;
+    global List<ContractFeed> InsertedBy;
     global List<InstalledMobileApp> InstalledMobileApps;
     global List<CollaborationInvitation> Inviter;
     global List<PlatformAction> InvokedByUser;
@@ -86,9 +86,9 @@ global class User {
     global Boolean IsProfilePhotoActive;
     global String LanguageLocaleKey;
     global List<ProcessInstance> LastActor;
-    global List<FeedItem> LastEditBy;
+    global List<FeedComment> LastEditBy;
     global Datetime LastLoginDate;
-    global List<DuplicateRecordSet> LastModifiedBy;
+    global List<npsp__Trigger_Handler__c> LastModifiedBy;
     global Id LastModifiedById;
     global Datetime LastModifiedDate;
     global String LastName;
@@ -105,16 +105,16 @@ global class User {
     global Id ManagerId;
     global String MediumBannerPhotoUrl;
     global String MediumPhotoUrl;
-    global List<ContentWorkspaceMember> Member;
+    global List<CaseTeamMember> Member;
     global String MobilePhone;
     global String Name;
     global Datetime OfflinePdaTrialExpirationDate;
     global Datetime OfflineTrialExpirationDate;
-    global List<ProcessInstanceStep> OriginalActor;
+    global List<ProcessInstanceWorkitem> OriginalActor;
     global String OutOfOfficeMessage;
     global List<OwnedContentDocument> OwnedContentDocuments;
-    global List<npsp__DataImport__c> Owner;
-    global List<ChatterActivity> Parent;
+    global List<npsp__Level__c> Owner;
+    global List<FeedComment> Parent;
     global List<PermissionSetAssignment> PermissionSetAssignments;
     global List<PermissionSetLicenseAssign> PermissionSetLicenseAssignments;
     global List<UserEmailPreferredPerson> PersonRecord;
@@ -128,7 +128,7 @@ global class User {
     global List<Group> Related;
     global List<EmailServicesAddress> RunAsUser;
     global List<Dashboard> RunningUser;
-    global List<UserProvAccount> SalesforceUser;
+    global List<UserProvAccountStaging> SalesforceUser;
     global String SenderEmail;
     global String SenderName;
     global List<SessionPermSetActivation> SessionPermSetActivations;
@@ -150,10 +150,10 @@ global class User {
     global String TimeZoneSidKey;
     global String Title;
     global List<UndecidedEventRelation> UndecidedEventRelations;
-    global List<TopicUserEvent> User;
+    global List<UserAppInfo> User;
     global List<UserEntityAccess> UserEntityAccessRights;
     global List<UserFieldAccess> UserFieldAccessRights;
-    global List<OpportunityShare> UserOrGroup;
+    global List<UserAppMenuCustomizationShare> UserOrGroup;
     global Boolean UserPermissionsAvantgoUser;
     global Boolean UserPermissionsCallCenterAutoLogin;
     global Boolean UserPermissionsInteractionUser;
@@ -241,7 +241,7 @@ global class User {
     global List<Site> UserSites;
     global String UserType;
     global String Username;
-    global List<LoginIp> Users;
+    global List<ContentNotification> Users;
     global List<npsp__Engagement_Plan_Task__c> npsp__Action_Plan_Tasks__r;
 
     global User () 

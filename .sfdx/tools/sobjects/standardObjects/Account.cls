@@ -7,12 +7,13 @@
 //     .object-meta.xml and .field-meta.xml files.
 
 global class Account {
-    global List<Event> Account;
+    global List<Task> Account;
     global List<AccountContactRole> AccountContactRoles;
     global String AccountNumber;
     global List<AccountPartner> AccountPartnersFrom;
     global List<AccountPartner> AccountPartnersTo;
     global String AccountSource;
+    global List<Account_Ledger_Book__c> Account_Ledger__r;
     global List<ActivityHistory> ActivityHistories;
     global Decimal AnnualRevenue;
     global List<Asset> Assets;
